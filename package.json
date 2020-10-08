@@ -1,0 +1,19 @@
+{
+  "name": "book-cupboard",
+  "version": "1.0.0",
+  "description": "google book api app",
+  "main": "app/web.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arjun-707/book-cupboard.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/arjun-707/book-cupboard/issues"
+  },
+  "homepage": "https://github.com/arjun-707/book-cupboard#readme"
+}
