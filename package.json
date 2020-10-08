@@ -2,10 +2,10 @@
   "name": "book-cupboard",
   "version": "1.0.0",
   "description": "google book api app",
-  "main": "app/web.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app/web.js"
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
