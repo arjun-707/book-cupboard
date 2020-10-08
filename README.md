@@ -12,6 +12,7 @@ google book api app
 * ```git push origin main```
 * ```heroku buildpacks:set heroku/nodejs --app book-cupboard```
 * ```heroku git:remote -a book-cupboard```
+* ```git push heroku main``` // to deploy
 
 # to watch logs
 * ```heroku logs --tail```
