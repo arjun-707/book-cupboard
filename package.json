@@ -19,6 +19,10 @@
   "homepage": "https://github.com/arjun-707/book-cupboard#readme",
   "dependencies": {
     "express": "^4.17.1",
-    "express-async-errors": "^3.1.1"
+    "express-async-errors": "^3.1.1",
+    "lodash": "^4.17.20",
+    "moment": "^2.29.1",
+    "mongoose": "^5.10.9",
+    "request": "^2.88.2"
   }
 }
