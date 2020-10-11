@@ -12,7 +12,10 @@ google book api app
 * ```git push origin main```
 * ```heroku buildpacks:set heroku/nodejs --app book-cupboard```
 * ```heroku git:remote -a book-cupboard```
-* ```git push heroku main``` // to deploy
+* ```heroku config:set PORT=3000```
+* ```heroku config:set NODE_ENV=development```
+* ```heroku config:set MONGO_URI=<connection-url>```
+* ```git push heroku main```
 
 # to watch logs
 * ```heroku logs --tail```
