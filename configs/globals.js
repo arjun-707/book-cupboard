@@ -3,6 +3,7 @@ const path = require('path');
 const root = path.resolve('./')
 
 const GLOBAL_CONSTANTS = {
+  PID: process.pid,
   PORT: process.env.PORT || 3000,
   NODE_ENV: process.env.NODE_ENV || 'development',
   MONGO_URI: process.env.MONGO_URI,
@@ -18,8 +19,8 @@ for (let key in GLOBAL_CONSTANTS) {
 for (let key in GLOBAL_CONSTANTS) typeof GLOBAL_CONSTANTS[key] != 'function' ? print(`${key}: ${GLOBAL_CONSTANTS[key]}`) : null
 
 process.on('uncaughtException', (err) => print("\nNode uncaughtException:: ", err))
-process.on('SIGTERM', (err) => print("\nNode SIGTERM:: ", err))
-// process.on('SIGINT', (err) => print("\nNode SIGINT:: ", err))
+process.on('SIGTERM', (err) => {print("\nNode SIGTERM:: ", err); process.kill(PID)})
+// process.on('SIGINT', (err) => print("\nNode SIGINT:: ", err);)
 process.on('exit', (err) => print("\nNode exit:: ", err))
 process.on('unhandledRejection', (err) => print("\nNode unhandledRejection:: ", err))
 
