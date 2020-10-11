@@ -1,16 +1,15 @@
-// Load the http module to create an http server
-var http = require('http');
+require('./configs/globals')
 
-// Configure HTTP server to respond with Hello World to all requests
-var server = http.createServer(function (request, response) {
-  response.writeHead(200, { "Content-Type": "text/plain" });
-  response.end("Hello World\n");
-});
+const express = require('express');
+const { initMiddleware, finalMiddleware } = require(root_path('/middleware/app.middleware'))
+const { connectMongo } = require(root_path('/lib/mongo'))
+const { initRoutes } = require(root_path('/routes'))
+const app = express()
 
-var port = process.env.PORT || 3000;
-
-// Listen on assigned port
-server.listen(port);
-
-// Put a friendly message on the terminal
-console.log("Server listening on port " + port);
+const startApp = async () => {
+  await connectMongo().catch(exit_app)
+  initMiddleware(app)
+  initRoutes(app)
+  finalMiddleware(app)
+}
+startApp()
